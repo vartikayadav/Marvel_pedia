@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="grid-container" >
+
+<div class="grid-item col-sm-4 col-lg-4" style="width:200%;height:500px;color:rgb(146, 43, 33);">{{ products.title }}
+
+<br><br><img src="{{ products.image.url }}" alt="{{ item.title }}" style="height:50%;">
+<p style="color:black;text-decoration:none;">Price :&#x20B9;{{ products.price }}</p>
+
+<p style="color:rgb(231, 76, 60  );text-decoration:none;">
+{% if products.available %}
+
+{% else %}
+Out of Stock
+
+{% endif %}
+
+</p>
+</div>
+<div class="grid-item col-sm-4 col-lg-4" style="margin-left:20%;height:100px;color:black;font-size:20px;">
+<br><br><p style="text-decoration:underline;">Description:</p>{{ products.description }}<br>
+<p style="text-align:left;float:left;"> Published in:<br>{{ products.published }}</p>
+<p style="text-align:right;"> Penciller:<br>{{ products.Penciller }}</p>
+<button type="button" style="font-size:20px;" name="button">Buy Now</button>
+</div>
+
+</div>
+{% endblock %}

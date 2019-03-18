@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/b1.css" %}">
+    <link rel="stylesheet" href="{% static "css/comics.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <link rel="icon" type="image/jpg" href="data:image/png;base64,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">
+
+    <title>MARVEL_PEDIA</title>
+    <style >
+
+
+      @import url(http://weloveiconfonts.com/api/?family=entypo);
+      #wrapper{
+      margin-top: 30px;
+
+      }
+      .box1{
+
+        border-radius: 50px;
+        font-family: 'entypo', sans-serif;
+        border-radius: 100px;
+        color:rgb(208, 211, 212);
+        margin:20px;
+        font-size: 25px;
+        display: inline;
+        cursor:pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="luxbar" class="luxbar-fixed"  >
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-red">
+        <ul class="luxbar-navigation">
+
+            <li class="luxbar-header">
+                <a href="/" class="luxbar-brand" style="font-size:40px;">MARVEL_PEDIA</a>
+                <label class="luxbar-hamburger luxbar-hamburger-doublespin"
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <li class="luxbar-item" style="font-size:20px;"><a href="/#about">About Us</a></li>
+            <li class="luxbar-item" style="font-size:20px;"><a href="/#character">Characters</a></li>
+            <li class="luxbar-item" style="font-size:20px;"><a href="{% url 'shop:allcomics' %}">Comics</a></li>
+            <li class="luxbar-item" style="font-size:20px;"><a href="#">Login</a></li>
+            <li class="luxbar-item" style="font-size:20px;" style="height:100%;font-size:20px;">
+             <form class="" action="{% url "search:search_result" %}" method="get" style="font-size:20px;margin-top:15px;" >
+               {% csrf_token %}
+               <input type="search" name="q" placeholder="Search">
+               <button type="submit" name="button">Click here</button>
+             </form>
+
+            </li>
+
+
+        </ul>
+    </div>
+</header>
+<br><br>
+<br>
+<br>
+
+{% block content %}
+{% endblock %}
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+  </body>
+</html>
